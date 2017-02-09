@@ -1,13 +1,11 @@
+'use-strict'
 var path = require('path');
 
 module.exports = {
-	context: path.join(__dirname, '/app'),
-	entry: {
-		app: './js/app.js',
-	},
+	entry: './app/client.js',
 	output: {
-		filename: '[name].js',
-		path: path.join(__dirname, '/dist')
+		path: path.join(__dirname, './app/assets'),
+		filename: 'client.js'
 	},
 	resolve: {
 		extensions: ['.js', '.jsx', '.json']
@@ -16,7 +14,13 @@ module.exports = {
 		loaders: [{
 			test: /\.jsx?$/,
 			exclude: /node_modules/,
-			loaders: ['react-hot-loader', 'babel-loader']
+			loaders: ['babel-loader']
 		}]
+	},
+	node: {
+	    console: true,
+	    fs: 'empty',
+	    net: 'empty',
+	    tls: 'empty'
 	}
 };
