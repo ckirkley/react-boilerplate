@@ -10160,6 +10160,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 var React = __webpack_require__(54);
+var Menu = __webpack_require__(186).default;
 
 var home = React.createClass({
 	displayName: 'home',
@@ -10176,7 +10177,8 @@ var home = React.createClass({
 				'p',
 				null,
 				'Donec aliquam malesuada lectus a egestas. Ut ante diam, aliquet eget tellus id, ultrices dapibus quam.'
-			)
+			),
+			React.createElement(Menu, null)
 		);
 	}
 });
@@ -22988,6 +22990,46 @@ var mountNode = document.getElementById('app-mount');
 var serverState = window.state;
 
 ReactDOM.render(App(serverState), mountNode);
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var React = __webpack_require__(54);
+
+exports.default = React.createClass({
+	displayName: 'menu',
+	render: function render() {
+		return React.createElement(
+			'ul',
+			null,
+			React.createElement(
+				'li',
+				null,
+				React.createElement(
+					'a',
+					{ href: '/' },
+					'Home'
+				)
+			),
+			React.createElement(
+				'li',
+				null,
+				React.createElement(
+					'a',
+					{ href: '/about' },
+					'About'
+				)
+			)
+		);
+	}
+});
 
 /***/ })
 /******/ ]);
