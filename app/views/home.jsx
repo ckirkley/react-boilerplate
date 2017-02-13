@@ -1,5 +1,4 @@
 const React = require('react')
-const Menu = require('./global/menu.jsx').default
 
 const home =  React.createClass({
 	render () {
@@ -7,7 +6,6 @@ const home =  React.createClass({
 			<div>
 				<h1>Home</h1>
 				<p>Donec aliquam malesuada lectus a egestas. Ut ante diam, aliquet eget tellus id, ultrices dapibus quam.</p>
-				<Menu />
 			</div>
 		)
 	}

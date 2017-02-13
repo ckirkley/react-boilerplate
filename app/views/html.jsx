@@ -1,9 +1,6 @@
 const React = require('react')
 
 const HTML = React.createClass({
-	propTypes: {
-		title: React.PropTypes.string
-	},
 	render () {
 		const {title} = this.props
 
@@ -20,6 +17,7 @@ const HTML = React.createClass({
 					<script id="app-state"
 						dangerouslySetInnerHTML={{__html: this.props.state}}>
 					</script>
+					<script src='assets/client.js'></script>
 				</body>
 			</html>
 		)

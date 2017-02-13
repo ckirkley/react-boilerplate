@@ -1,7 +1,7 @@
 'use strict'
 const React = require('react')
 const ReactDOM = require('react-dom')
-const AppComponent = require('./views/home.jsx')
+const AppComponent = require('./views/app.jsx').default
 
 const App = React.createFactory(AppComponent)
 const mountNode = document.getElementById('app-mount')

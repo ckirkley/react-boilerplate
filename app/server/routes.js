@@ -17,11 +17,12 @@ export default (server) => {
 		path: '/',
 		handler: (request, reply) => {
 			const context = {
-				title: 'Home'
+				title: 'Home',
+				view: 'home'
 			}
 			context.state = 'window.state = ' + JSON.stringify(context) + ';'
 
-			reply.view('home', context)
+			reply.view('app', context)
 		}
 	})
 
@@ -30,11 +31,12 @@ export default (server) => {
 		path: '/about',
 		handler: (request, reply) => {
 			const context = {
-				title: 'About'
+				title: 'About',
+				view: 'about'
 			}
 			context.state = 'window.state = ' + JSON.stringify(context) + ';'
 
-			reply.view('about', context)
+			reply.view('app', context)
 		}
 	})
 }
