@@ -7,4 +7,6 @@ const App = React.createFactory(AppComponent)
 const mountNode = document.getElementById('app-mount')
 const serverState = window.state
 
+require('./styles/default.sass')
+
 ReactDOM.render(App(serverState), mountNode)

@@ -11,6 +11,7 @@ const HTML = React.createClass({
 			<html>
 				<head>
 					<title>{title}</title>
+					<link rel='stylesheet' href='assets/main.css' />
 				</head>
 				<body>
 					<div id="app-mount"
