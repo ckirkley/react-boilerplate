@@ -3,8 +3,9 @@ const Home = require('../views/home.jsx').default
 const About = require('../views/about.jsx').default
 
 const Router = function router(location) {
+	console.log(location)
 	switch (location) {
-		case '/':
+		case 'home':
 			return <Home />
 			break
 		case 'about':
@@ -18,7 +19,6 @@ const Router = function router(location) {
 const Link = React.createClass({
 	onClick (event) {
 		event.preventDefault()
-		console.log(event)
 		window.history.pushState(null, null, this.props.to)
 		window.dispatchEvent(new window.PopStateEvent('popstate'))
 	},

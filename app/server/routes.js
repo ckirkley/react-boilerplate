@@ -18,7 +18,7 @@ export default (server) => {
 		handler: (request, reply) => {
 			const context = {
 				title: 'Home',
-				location: '/'
+				location: 'home'
 			}
 			context.state = 'window.state = ' + JSON.stringify(context) + ';'
 
