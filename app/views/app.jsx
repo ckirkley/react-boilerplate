@@ -1,29 +1,23 @@
 const React = require('react')
+const isNode = require('detect-node')
+
 const Menu = require('./global/menu.jsx').default
-const Home = require('./home.jsx').default
-const About = require('./about.jsx').default
 
-const app =  React.createClass({
+const {Router} = require('../modules/router')
+
+const App =  React.createClass({
+	componentDidMount () {
+	},
 	render () {
-		const {view} = this.props
-		let content = null
-
-		switch (view) {
-			case 'home':
-				content = <Home />
-				break
-			case 'about':
-				content = <About />
-				break
-		}
-
+		const {location} = this.props
+		const component = Router(location)
 		return (
 			<div>
-				{content}
 				<Menu />
+				{component}
 			</div>
 		)
 	}
 })
 
-export default app
+export default App

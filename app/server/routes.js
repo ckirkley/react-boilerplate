@@ -18,7 +18,7 @@ export default (server) => {
 		handler: (request, reply) => {
 			const context = {
 				title: 'Home',
-				view: 'home'
+				location: '/'
 			}
 			context.state = 'window.state = ' + JSON.stringify(context) + ';'
 
@@ -32,7 +32,7 @@ export default (server) => {
 		handler: (request, reply) => {
 			const context = {
 				title: 'About',
-				view: 'about'
+				location: 'about'
 			}
 			context.state = 'window.state = ' + JSON.stringify(context) + ';'
 
