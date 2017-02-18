@@ -2,10 +2,9 @@ const React = require('react')
 const Home = require('../views/home.jsx').default
 const About = require('../views/about.jsx').default
 
-const Router = function router(location) {
-	console.log(location)
+const Router = (location) => {
 	switch (location) {
-		case 'home':
+		case '':
 			return <Home />
 			break
 		case 'about':
@@ -29,4 +28,10 @@ const Link = React.createClass({
 	}
 })
 
-export {Router, Link}
+const Capitalize = (string) => {
+	return string.replace(/^[a-z]/, (str) => {
+		return str.toUpperCase()
+	})
+}
+
+export {Router, Link, Capitalize}

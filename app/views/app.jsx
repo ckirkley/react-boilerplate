@@ -10,11 +10,13 @@ const App =  React.createClass({
 	},
 	render () {
 		const {location} = this.props
-		const component = Router(location)
+		const Component = Router(location)
 		return (
 			<div>
 				<Menu />
-				{component}
+				<div className='main-content'>
+					{Component}
+				</div>
 			</div>
 		)
 	}

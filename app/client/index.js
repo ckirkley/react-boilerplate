@@ -1,12 +1,12 @@
 const React = require('react')
 const {render} = require('react-dom')
 
-const AppComponent = require('./views/app.jsx').default
+const AppComponent = require('../views/app.jsx').default
 const App = React.createFactory(AppComponent)
 const state = window.state
 
 
-require('./styles/default.sass')
+require('../styles/default.sass')
 
 renderApp(state)
 

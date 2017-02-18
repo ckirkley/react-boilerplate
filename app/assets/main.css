@@ -77,8 +77,28 @@ a {
   color: #fff; }
 
 .main-content {
-  width: 70%;
-  display: inline-block; }
+  padding: 2em; }
+
+.main-menu {
+  background: #ccc;
+  color: #666;
+  display: block;
+  margin-bottom: 1.6em;
+  padding: 0 1em; }
+  .main-menu ul {
+    margin: 0;
+    padding: 0; }
+    .main-menu ul li {
+      display: inline-block;
+      line-height: 2.6em;
+      padding: 0 1em; }
+      .main-menu ul li:hover {
+        background: #999; }
+        .main-menu ul li:hover a {
+          color: #ccc; }
+      .main-menu ul li a {
+        display: block;
+        color: #666; }
 
 .sidebar {
   width: 28%;
