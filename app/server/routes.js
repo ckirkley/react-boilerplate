@@ -18,7 +18,7 @@ export default (server) => {
 		handler: (request, reply) => {
 			const context = {
 				title: 'Home',
-				location: ''
+				location: '/'
 			}
 			context.state = 'window.state = ' + JSON.stringify(context) + ';'
 
@@ -28,11 +28,13 @@ export default (server) => {
 
 	server.route({
 		method: 'GET',
-		path: '/about',
+		path: '/about/{id?}',
 		handler: (request, reply) => {
+			const id = request.params.id ? request.params.id : ''
 			const context = {
 				title: 'About',
-				location: 'about'
+				location: `/about/${id}`,
+				id: id
 			}
 			context.state = 'window.state = ' + JSON.stringify(context) + ';'
 

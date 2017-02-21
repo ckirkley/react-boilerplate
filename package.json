@@ -5,8 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app/server",
-    "build": "webpack -p --progress --color",
-    "watch": "webpack --progress --color --watch",
+    "build": "webpack -p --progress --colors",
+    "watch": "webpack --progress --colors --watch",
     "dev": "nodemon -r dotenv/config app/server dotenv_config_path=local.env && npm run watch"
   },
   "author": "Chris Kirkley",
@@ -42,6 +42,7 @@
     "hapi-react-views": "^9.2.1",
     "inert": "^4.1.0",
     "object-assign": "^4.1.1",
+    "path-to-regexp": "^1.7.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "^3.0.2",

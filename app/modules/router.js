@@ -1,15 +1,32 @@
 const React = require('react')
+const toRegex = require('path-to-regexp')
+
 const Home = require('../views/home.jsx').default
 const About = require('../views/about.jsx').default
 
-const Router = (location) => {
-	switch (location) {
-		case '':
-			return <Home />
-			break
-		case 'about':
-			return <About />
-			break
+const routes = [
+	{ path: '/', action: () => <Home /> },
+	{ path: '/about/:id?', action: (params) => <About {...params} /> }
+]
+
+const matchUri = (path, uri) => {
+	const keys = []
+	const pattern = toRegex(path, keys)
+	const match = pattern.exec(uri)
+	if (!match) return null
+	const params = Object.create(null)
+	for  (let i = 1; i < match.length; i++) {
+		params[keys[i-1].name] = match[i] !== undefined ? match[i] : undefined
+	}
+	return params
+}
+
+const Router = (uri) => {
+	for (const route of routes) {
+		const params = matchUri(route.path, uri)
+		if (!params) continue
+		console.log(params)
+		return route.action(params)
 	}
 }
 

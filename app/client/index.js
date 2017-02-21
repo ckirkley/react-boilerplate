@@ -12,7 +12,7 @@ renderApp(state)
 
 if (window) {
 	window.addEventListener('popstate', (e) => {
-		const location = window.location.pathname.replace(/^\/|\/$/g, '')
+		const location = window.location.pathname
 		const newState = Object.assign({}, state, {location: location})
 		window.state = newState
 		renderApp(newState)

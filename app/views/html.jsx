@@ -8,7 +8,7 @@ const HTML = React.createClass({
 			<html>
 				<head>
 					<title>{title}</title>
-					<link rel='stylesheet' href='assets/main.css' />
+					<link rel='stylesheet' href='/assets/main.css' />
 				</head>
 				<body>
 					<div id="app-mount"
@@ -17,7 +17,7 @@ const HTML = React.createClass({
 					<script id="app-state"
 						dangerouslySetInnerHTML={{__html: this.props.state}}>
 					</script>
-					<script src='assets/client.js'></script>
+					<script src='/assets/client.js'></script>
 				</body>
 			</html>
 		)
