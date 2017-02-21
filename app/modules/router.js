@@ -25,7 +25,6 @@ const Router = (uri) => {
 	for (const route of routes) {
 		const params = matchUri(route.path, uri)
 		if (!params) continue
-		console.log(params)
 		return route.action(params)
 	}
 }

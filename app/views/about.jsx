@@ -1,6 +1,10 @@
 const React = require('react')
+const dataStore = require('../lib/dataStore').default
 
 const about = React.createClass({
+	componentDidMount () {
+		dataStore.dispatch({type: 'SET_DATA', payload: 'I have arrived on the \'about\' page'})
+	},
 	render () {
 		return (
 			<div>
