@@ -11,10 +11,8 @@ const state = window.state
 require('../styles/default.sass')
 
 dataStore.subscribe(() => {
-	console.log('dataStore updated: ', dataStore.getState())
+	renderApp(state)
 })
-
-dataStore.dispatch({type: 'SET_DATA', payload: 'qwerty data dump'})
 
 renderApp(state)
 

@@ -33,7 +33,7 @@ export default (server) => {
 			const id = request.params.id ? request.params.id : ''
 			const context = {
 				title: 'About',
-				location: `/about/${id}`,
+				location: '/about',
 				id: id
 			}
 			context.state = 'window.state = ' + JSON.stringify(context) + ';'

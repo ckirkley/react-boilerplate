@@ -1,12 +1,14 @@
 const React = require('react')
 const toRegex = require('path-to-regexp')
 
+const dataStore = require('../lib/dataStore').default
+
 const Home = require('../views/home.jsx').default
 const About = require('../views/about.jsx').default
 
 const routes = [
-	{ path: '/', action: () => <Home /> },
-	{ path: '/about/:id?', action: (params) => <About {...params} /> }
+	{ path: '', action: (props) => <Home {...props} /> },
+	{ path: '/about', action: (props) => <About {...props} /> }
 ]
 
 const matchUri = (path, uri) => {
@@ -18,14 +20,15 @@ const matchUri = (path, uri) => {
 	for  (let i = 1; i < match.length; i++) {
 		params[keys[i-1].name] = match[i] !== undefined ? match[i] : undefined
 	}
+	Object.assign(params, {dataStore: dataStore.getState()})
 	return params
 }
 
 const Router = (uri) => {
 	for (const route of routes) {
-		const params = matchUri(route.path, uri)
-		if (!params) continue
-		return route.action(params)
+		const props = matchUri(route.path, uri)
+		if (!props) continue
+		return route.action(props)
 	}
 }
 
