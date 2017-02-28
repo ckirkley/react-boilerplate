@@ -19,7 +19,9 @@ renderApp(state)
 
 if (window) {
 	window.addEventListener('popstate', (e) => {
+		console.log(window.history)
 		state = window.state = window.history.state
+		console.log(state)
 		renderApp(window.state)
 	})
 }

@@ -6957,9 +6957,11 @@ var Link = React.createClass({
 	displayName: 'Link',
 	onClick: function onClick(event) {
 		event.preventDefault();
+		if (typeof window.history.pushState === 'undefined') {
+			return window.location.href = this.props.to;
+		}
 		var state = { title: this.props.title, location: this.props.to };
 		window.history.pushState(state, this.props.title, this.props.to);
-		// window.history.replaceState(state, this.props.title, this.props.to)
 		window.dispatchEvent(new window.PopStateEvent('popstate'));
 	},
 	render: function render() {
@@ -24780,7 +24782,7 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(console) {
 
 var dataStore = __webpack_require__(34).default;
 
@@ -24804,7 +24806,9 @@ renderApp(state);
 
 if (window) {
 	window.addEventListener('popstate', function (e) {
+		console.log(window.history);
 		state = window.state = window.history.state;
+		console.log(state);
 		renderApp(window.state);
 	});
 }
@@ -24812,6 +24816,7 @@ if (window) {
 function renderApp(state) {
 	render(React.createElement(AppComponent, state), document.getElementById('app-mount'));
 }
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
 
 /***/ })
 /******/ ]);
