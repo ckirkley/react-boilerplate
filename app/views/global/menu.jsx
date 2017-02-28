@@ -7,8 +7,8 @@ export default React.createClass({
 		return (
 			<div className='main-menu'>
 				<ul>
-					<li><Link to='/'>Home</Link></li>
-					<li><Link to='/about'>About</Link></li>
+					<li><Link to='/' title='Home'>Home</Link></li>
+					<li><Link to='/about' title='About'>About</Link></li>
 				</ul>
 			</div>
 		)

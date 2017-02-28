@@ -37,7 +37,9 @@ const Router = (uri) => {
 const Link = React.createClass({
 	onClick (event) {
 		event.preventDefault()
-		window.history.pushState(null, null, this.props.to)
+		const state = {title: this.props.title, location: this.props.to}
+		window.history.pushState(state, this.props.title, this.props.to)
+		// window.history.replaceState(state, this.props.title, this.props.to)
 		window.dispatchEvent(new window.PopStateEvent('popstate'))
 	},
 	render () {

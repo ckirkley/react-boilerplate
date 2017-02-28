@@ -28,13 +28,12 @@ export default (server) => {
 
 	server.route({
 		method: 'GET',
-		path: '/about/{id?}',
+		path: '/about',
 		handler: (request, reply) => {
 			const id = request.params.id ? request.params.id : ''
 			const context = {
 				title: 'About',
-				location: '/about',
-				id: id
+				location: '/about'
 			}
 			context.state = 'window.state = ' + JSON.stringify(context) + ';'
 

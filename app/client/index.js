@@ -5,7 +5,8 @@ const {render} = require('react-dom')
 
 const AppComponent = require('../views/app.jsx').default
 const App = React.createFactory(AppComponent)
-const state = window.state
+
+let state = window.state
 
 
 require('../styles/default.sass')
@@ -18,10 +19,8 @@ renderApp(state)
 
 if (window) {
 	window.addEventListener('popstate', (e) => {
-		const location = window.location.pathname
-		const newState = Object.assign({}, state, {location: location})
-		window.state = newState
-		renderApp(newState)
+		state = window.state = window.history.state
+		renderApp(window.state)
 	})
 }
 

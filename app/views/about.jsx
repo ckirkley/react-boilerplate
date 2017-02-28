@@ -1,14 +1,16 @@
 const React = require('react')
-const dataStore = require('../lib/dataStore').default
+
+const {setData, clearData} = require('../lib/dataStoreActions').default
 
 const about = React.createClass({
 	componentDidMount () {
 	},
 	handleUpdateData () {
-		dataStore.dispatch({type: 'SET_DATA', payload: 'Button clicked!!!'})		
+		setData('Button clicked!!!')
 	},
-	handleClearData () {
-		dataStore.dispatch({type: 'CLEAR_DATA'})
+	handleClearData (event) {
+		event.preventDefault()
+		clearData()
 	},
 	render () {
 		const {dataStore} = this.props
