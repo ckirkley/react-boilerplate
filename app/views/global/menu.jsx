@@ -1,5 +1,5 @@
-const React = require('react')
-const {Link} = require('../../modules/router')
+import React from 'react'
+import {Link} from '../../modules/router'
 
 export default React.createClass({
 	render () {

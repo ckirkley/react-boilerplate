@@ -8,6 +8,7 @@ const format = 'dd mmm HH:MM:ss'
 const Path = require('path')
 
 const routes = require('./routes').default
+const apiRoutes = require('./apiRoutes').default
 
 const server = new Hapi.Server()
 server.connection({
@@ -21,6 +22,9 @@ server.register([
 	},
 	{
 		register: require('vision')
+	},
+	{
+		register: require('h2o2')
 	},
 	{
 		register: require('good'),
@@ -57,6 +61,7 @@ server.register([
 })
 
 routes(server)
+apiRoutes(server)
 
 
 server.start(function() {

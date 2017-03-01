@@ -1,10 +1,10 @@
-const React = require('react')
-const toRegex = require('path-to-regexp')
+import React from 'react'
+import toRegex from 'path-to-regexp'
 
-const dataStore = require('../lib/dataStore').default
+import dataStore from '../lib/dataStore'
 
-const Home = require('../views/home.jsx').default
-const About = require('../views/about.jsx').default
+import Home from '../views/home.jsx'
+import About from '../views/about.jsx'
 
 const routes = [
 	{ path: '', action: (props) => <Home {...props} /> },

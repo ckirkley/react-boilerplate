@@ -14,7 +14,7 @@ const HTML = React.createClass({
 					<div id="app-mount"
 						dangerouslySetInnerHTML={{__html: this.props.children}}>
 					</div>
-					<script id="app-state"
+					<script id="app-entry-state"
 						dangerouslySetInnerHTML={{__html: this.props.state}}>
 					</script>
 					<script src='/assets/client.js'></script>

@@ -1,9 +1,9 @@
-const dataStore = require('../lib/dataStore.js').default
+import dataStore from '../lib/dataStore.js'
 
-const React = require('react')
-const {render} = require('react-dom')
+import React from 'react'
+import {render} from 'react-dom'
 
-const AppComponent = require('../views/app.jsx').default
+import AppComponent from '../views/app.jsx'
 const App = React.createFactory(AppComponent)
 
 let state = window.state
@@ -19,9 +19,7 @@ renderApp(state)
 
 if (window) {
 	window.addEventListener('popstate', (e) => {
-		console.log(window.history)
 		state = window.state = window.history.state
-		console.log(state)
 		renderApp(window.state)
 	})
 }
